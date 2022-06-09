@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chat-Bot</title>
+    <script src="eel.js"></script>  <!-- обязательный скрипт -->
+
+    <script src="jquery-3.6.0.slim.js"></script>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">  <!-- иконка -->
+    <link rel="stylesheet" href="main.css"> <!-- стиль css -->
+</head>
+<body>
+    <div id="chat"> <!-- чат -->
+    </div>
+    <input id="frase" type="text" maxlength="140" onkeyup="this.placeholder=''" placeholder="Начните чат" required="" autofocus>  <!-- ввод -->
+    <button id="send">Отправить</button>    <!-- кнопка -->
+
+    <div class="info"></div>
+    <script>
+        function feedback() {   /* синхронный callback вызов пайтон-кода */
+            eel.recv_data(frase.value)(processAcknowledgement); 
+        }
+        function processAcknowledgement(result){ 
+            if (frase.value != "") {
+                let frase = document.querySelector("#frase");   /* если ввод не пустой - отправляет в пайтон-код */
+                
+                let mesa = document.createElement('div');   /* функция добаления сообщения пользоваателя */
+                mesa.className = "message-own";
+                mesa.innerHTML = frase.value;
+                chat.append(mesa);
+
+                let mesb = document.createElement('div');   /* функция добаления сообщения бота */   
+                mesb.className = "message";
+                mesb.innerHTML = result;
+                chat.append(mesb);
+                
+                chat.scrollTop = chat.scrollHeight - chat.clientHeight; /* скролл чата вниз */
+                frase.value = "";   /* обнуление ввода */
+
+            }
+        }
+        $('input').keydown(function(e) {    /* по enter вызывает feedback() */
+            if(e.keyCode === 13) {
+                feedback();
+            }
+        });
+        $('#send').click(function(){    /* по enter вызывает feedback() */
+            feedback();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+
+@font-face {
+    font-family: Roboto;
+    src: url('Roboto-Bold.ttf');
+    
+}
+
+body {
+    background: #00416A;  
+    background: -webkit-linear-gradient(to right, #E4E5E6, #00416A);  
+    background: linear-gradient(to right, #E4E5E6, #00416A); 
+    color: white;
+    font-family: Roboto;
+    
+}
+
+#send {
+    display:block;
+    border:none;
+    margin-top: 15px;
+    padding: 20px;
+
+    background: #12c2e9;  
+    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    color: #E4E5E6;
+    
+    border-radius: 10px;
+    outline: none;
+    width: 100%;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#frase {
+    display: block;
+    border: none;
+    padding: 20px;
+
+    background: rgba(255, 255, 255, .5);
+    color: rgba(0, 0, 0, 0.5);
+
+    overflow:hidden;
+    border-radius: 10px;
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 30px;
+}
+
+#frase::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#chat {
+    display:block;
+    border:none;
+    padding: 30px;
+    margin-top: 15px;
+
+    background-image: url(theme.png);
+    color: rgba(0, 0, 0, 0.5);
+    
+    border-radius: 10px;
+    overflow: auto;
+    box-sizing: border-box;
+    outline: none;
+    width: 100%;
+    height: 240px;
+    font-size: 25px; 
+}
+
+#chat::-webkit-scrollbar { 
+    display: none; 
+}
+
+.message-own{
+    display:block;
+    border:none;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: auto;
+
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    color: #000000;
+    
+    border-radius: 40px 40px 10px 40px;
+    word-break: break-word;
+    width: fit-content;
+    min-width: 20px;
+    min-height: 20px;
+}
+.message {
+    display:block;
+    border:none;
+    padding: 10px;
+    margin-top: 10px;
+    
+    background-color: #ff3f81;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    color: #ffffff;
+    
+    border-radius: 40px 40px 40px 10px;
+    word-break: break-word;
+    width: fit-content;
+    min-width: 20px;
+    min-height: 20px;
+}

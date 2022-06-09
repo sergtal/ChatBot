@@ -1,0 +1,1 @@
+python -m eel ChatBot.py web --onefile --noconsole --hidden-import="sklearn.utils._vector_sentinel" --hidden-import="sklearn.utils._typedefs" --hidden-import="sklearn.neighbors._partition_nodes" --hidden-import="sklearn.utils._heap" --hidden-import="sklearn.utils._sorting" -i "C:/Users/Сергей/Desktop/Project/icon.png"
